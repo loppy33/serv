@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const TOKEN = '6611194889:AAEv8pRkPS_xGcvVOlX6tPJ3I22v9MKtB8c';
-const userID = 5926461080
+const userID = -1002004610161
 const bot = new TelegramBot(TOKEN, { polling: false });
 
 // Настройка multer для обработки файлов
@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-app.post('/wheel/send', upload.array('images', 3), async (req, res) => {
+app.post('/send', upload.array('images', 3), async (req, res) => {
     const email = req.body.email;
     const prize = req.body.prize;
     const images = req.files;
