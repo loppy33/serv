@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-app.post('/send', upload.array('images', 3), async (req, res) => {
+app.post('/wheel/send', upload.array('images', 3), async (req, res) => {
     const email = req.body.email;
     const prize = req.body.prize;
     const images = req.files;
